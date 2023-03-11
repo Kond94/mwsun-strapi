@@ -36,12 +36,8 @@
     "category": {
       "type": "enumeration",
       "enum": [
-        "Breakfast",
-        "African",
-        "Euro",
-        "Italian",
-        "American",
-        "Asian",
+        "Starters & Salads",
+        "Lunch & Dinner",
         "Deserts",
         "Snacks",
         "Drinks"
