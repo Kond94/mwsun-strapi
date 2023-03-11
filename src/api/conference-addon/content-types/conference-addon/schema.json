@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "conference_addons",
+  "info": {
+    "singularName": "conference-addon",
+    "pluralName": "conference-addons",
+    "displayName": "Conference-Addon"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "price": {
+      "type": "integer",
+      "required": true
+    },
+    "icon": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "package_items",
+  "info": {
+    "singularName": "package-item",
+    "pluralName": "package-items",
+    "displayName": "Package-Item"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}
