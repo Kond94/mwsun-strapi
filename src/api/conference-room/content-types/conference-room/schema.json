@@ -4,7 +4,8 @@
   "info": {
     "singularName": "conference-room",
     "pluralName": "conference-rooms",
-    "displayName": "Conference-Room"
+    "displayName": "Conference-Room",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -25,24 +26,20 @@
       "required": true
     },
     "displayPhoto": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
-    },
-    "photos": {
+      "required": true,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
-    "amenities": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::amenity.amenity"
+    "photos": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }
