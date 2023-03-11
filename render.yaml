@@ -20,7 +20,7 @@ services:
         sync: false
       - key: DATABASE_URL
         fromDatabase:
-          name: strapi
+          name: mwsun-strapi
           property: connectionString
       - key: JWT_SECRET
         generateValue: true
