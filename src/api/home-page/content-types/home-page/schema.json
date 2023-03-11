@@ -1,0 +1,65 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_pages",
+  "info": {
+    "singularName": "home-page",
+    "pluralName": "home-pages",
+    "displayName": "HomePage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Section_1_Title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "Section_1_Text": {
+      "type": "text",
+      "required": true
+    },
+    "Section_1_Discount": {
+      "type": "integer",
+      "required": false,
+      "default": 0
+    },
+    "Section_1_Rooms": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::room.room"
+    },
+    "Section_2_Title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "Section_2_Text": {
+      "type": "text",
+      "required": true
+    },
+    "Section_2_Services": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::service.service"
+    },
+    "Section_3_Title": {
+      "type": "string",
+      "required": true
+    },
+    "Section_3_Text": {
+      "type": "text",
+      "required": true
+    },
+    "Section_3_Images": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    }
+  }
+}

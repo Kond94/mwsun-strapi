@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "promotion_rooms",
+  "info": {
+    "singularName": "promotion-room",
+    "pluralName": "promotion-rooms",
+    "displayName": "Promotion-Room"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "promotionName": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "discount": {
+      "type": "integer",
+      "required": true
+    },
+    "room": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::room.room"
+    }
+  }
+}

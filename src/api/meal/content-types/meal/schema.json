@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "meals",
+  "info": {
+    "singularName": "meal",
+    "pluralName": "meals",
+    "displayName": "Meal",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "price": {
+      "type": "integer",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "displayPhoto": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Breakfast",
+        "African",
+        "Euro",
+        "Italian",
+        "American",
+        "Asian",
+        "Deserts",
+        "Snacks",
+        "Drinks"
+      ],
+      "required": true
+    }
+  }
+}
