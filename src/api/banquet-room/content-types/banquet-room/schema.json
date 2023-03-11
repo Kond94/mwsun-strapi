@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "banquet_rooms",
+  "info": {
+    "singularName": "banquet-room",
+    "pluralName": "banquet-rooms",
+    "displayName": "Banquet-Room"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "capacity": {
+      "required": true,
+      "type": "integer"
+    },
+    "price": {
+      "type": "integer",
+      "required": true
+    },
+    "displayPhoto": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "photos": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    }
+  }
+}
