@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "banquet_bookings",
+  "info": {
+    "singularName": "banquet-booking",
+    "pluralName": "banquet-bookings",
+    "displayName": "Banquet-Booking",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "firstName": {
+      "type": "string",
+      "required": true
+    },
+    "lastName": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "banquet_room": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::banquet-room.banquet-room"
+    },
+    "banquet_addons": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::banquet-addon.banquet-addon"
+    },
+    "participants": {
+      "type": "integer",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "time": {
+      "type": "enumeration",
+      "enum": [
+        "Afternoon",
+        "Evening"
+      ]
+    },
+    "specialRequest": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

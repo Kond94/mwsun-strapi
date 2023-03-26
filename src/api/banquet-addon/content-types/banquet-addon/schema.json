@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "banquet_addons",
+  "info": {
+    "singularName": "banquet-addon",
+    "pluralName": "banquet-addons",
+    "displayName": "Banquet-Addon"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "icon": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "price": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}

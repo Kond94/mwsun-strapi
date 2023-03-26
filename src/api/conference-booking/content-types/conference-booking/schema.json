@@ -1,0 +1,69 @@
+{
+  "kind": "collectionType",
+  "collectionName": "conference_bookings",
+  "info": {
+    "singularName": "conference-booking",
+    "pluralName": "conference-bookings",
+    "displayName": "Conference-Booking",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "firstName": {
+      "type": "string",
+      "required": true
+    },
+    "lastName": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "commencementDate": {
+      "type": "date",
+      "required": true
+    },
+    "time": {
+      "type": "enumeration",
+      "enum": [
+        "Morning",
+        "Afternoon",
+        "Evening",
+        "All Day"
+      ],
+      "default": "All Day",
+      "required": true
+    },
+    "conference_addons": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::conference-addon.conference-addon"
+    },
+    "participants": {
+      "type": "integer",
+      "required": true
+    },
+    "conference_room": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::conference-room.conference-room"
+    },
+    "numberOfDays": {
+      "type": "integer",
+      "required": true
+    },
+    "specialRequest": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

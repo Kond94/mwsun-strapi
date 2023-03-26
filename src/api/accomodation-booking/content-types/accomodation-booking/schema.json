@@ -1,17 +1,23 @@
 {
   "kind": "collectionType",
-  "collectionName": "bookings",
+  "collectionName": "accomodation_bookings",
   "info": {
-    "singularName": "booking",
-    "pluralName": "bookings",
-    "displayName": "Booking"
+    "singularName": "accomodation-booking",
+    "pluralName": "accomodation-bookings",
+    "displayName": "Accomodation-Booking",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
-    "fullName": {
+    "firstName": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "lastName": {
       "type": "string",
       "required": true
     },
@@ -21,21 +27,20 @@
     },
     "phone": {
       "type": "string",
-      "required": true,
-      "minLength": 10,
-      "maxLength": 10
-    },
-    "country": {
-      "type": "string",
       "required": true
     },
-    "checkIn": {
+    "arrivalDate": {
       "type": "date",
       "required": true
     },
-    "checkOut": {
+    "departureDate": {
       "type": "date",
       "required": true
+    },
+    "room": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::room.room"
     },
     "adults": {
       "type": "integer",
@@ -45,13 +50,9 @@
       "type": "integer",
       "required": true
     },
-    "rooms": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::room.room"
-    },
-    "comments": {
-      "type": "text"
+    "specialRequest": {
+      "type": "text",
+      "required": true
     }
   }
 }
