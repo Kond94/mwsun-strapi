@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "accomodation_bookings",
+  "collectionName": "accommodation_bookings",
   "info": {
-    "singularName": "accomodation-booking",
-    "pluralName": "accomodation-bookings",
-    "displayName": "Accomodation-Booking",
-    "description": ""
+    "singularName": "accommodation-booking",
+    "pluralName": "accommodation-bookings",
+    "displayName": "Accommodation-Booking"
   },
   "options": {
     "draftAndPublish": false
@@ -14,8 +13,7 @@
   "attributes": {
     "firstName": {
       "type": "string",
-      "required": true,
-      "unique": false
+      "required": true
     },
     "lastName": {
       "type": "string",
@@ -51,8 +49,7 @@
       "required": true
     },
     "specialRequest": {
-      "type": "text",
-      "required": true
+      "type": "text"
     }
   }
 }
