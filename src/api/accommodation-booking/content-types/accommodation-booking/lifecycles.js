@@ -1,7 +1,6 @@
 module.exports = {
   afterCreate(event) {
     const { result, params } = event;
-    console.log("result: ", result);
 
     const {
       id,
@@ -21,10 +20,10 @@ module.exports = {
       strapi.plugins["email"].services.email.send({
         to: "frontoffice@malawisunhotel.com",
         from: "frontoffice@malawisunhotel.com", // e.g. single sender verification in SendGrid
-        cc: "kamsesakond@hotmail.com",
-        bcc: "carolinemkutumula@gmail.com",
+        cc: "marketingmwsun@gmail.com",
+        bcc: "",
         replyTo: "",
-        subject: "(TEST ENVIRONMENT) New Reservation Alert",
+        subject: "(TEST ENVIRONMENT) New Accomodation Reservation Alert",
         text: "Hello", // Replace with a valid field ID
         html: `
                        Name: ${firstName} ${lastName}
@@ -52,15 +51,15 @@ module.exports = {
       strapi.plugins["email"].services.email.send({
         to: email,
         from: "frontoffice@malawisunhotel.com", // e.g. single sender verification in SendGrid
-        cc: "marketingmwsun@gmail.com",
-        bcc: "carolinemkutumula@gmail.com",
+        cc: "",
+        bcc: "",
         replyTo: "",
         subject: "(TEST ENVIRONMENT) Thank you for your reservation",
         text: "Hello", // Replace with a valid field ID
         html: `
                        Dear: ${firstName}
                        <br />
-                       We have successfully received your reservation request. Our team will respond with a confirmation shortly.
+                       We have successfully received your accommodation reservation request. Our team will respond with a confirmation shortly.
                        <br />
                        We take pride in our customer care. If you are not reponded to within 15 minuites please talk to one of our Managers to help us serve you better
                       `,
