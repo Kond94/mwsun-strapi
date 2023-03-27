@@ -1,6 +1,8 @@
 module.exports = {
   afterCreate(event) {
     const { result, params } = event;
+    console.log("result: ", result);
+
     const {
       id,
       firstName,
@@ -35,7 +37,7 @@ module.exports = {
                        <br />
                        Departure: ${departureDate}
                        <br />
-                       Room: ${room.title} @ Mk${room.price.toLocaleString(
+                       Room: ${room?.title} @ Mk${room?.price.toLocaleString(
           "en-US"
         )}
                        <br />
