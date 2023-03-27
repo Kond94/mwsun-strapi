@@ -4,7 +4,8 @@
   "info": {
     "singularName": "accommodation-booking",
     "pluralName": "accommodation-bookings",
-    "displayName": "Accommodation-Booking"
+    "displayName": "Accommodation-Booking",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -46,6 +47,11 @@
     "specialRequest": {
       "type": "text",
       "required": true
+    },
+    "room": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::room.room"
     }
   }
 }
