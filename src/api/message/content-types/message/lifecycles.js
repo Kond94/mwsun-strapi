@@ -34,7 +34,7 @@ module.exports = {
         subject: "(TEST ENVIRONMENT) Thank you for your communication",
         text: "Hello", // Replace with a valid field ID
         html: `
-                       Dear: ${firstName}
+                       Dear: ${name}
                        <br />
                        We have successfully received your message. Our team will respond with a confirmation shortly.
                        <br />
