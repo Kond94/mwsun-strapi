@@ -2,7 +2,7 @@ module.exports = {
   afterCreate(event) {
     const { result, params } = event;
 
-    const { id, name, email, phone, subject, message } = result;
+    const { id, from, email, phone, subject, message } = result;
 
     try {
       strapi.plugins["email"].services.email.send({
@@ -14,7 +14,7 @@ module.exports = {
         subject: "(TEST ENVIRONMENT) New Mesage Alert",
         text: "Hello", // Replace with a valid field ID
         html: `
-                       Name: ${name}
+                       Name: ${from}
                        <br />
                        Email Address: ${email}
                        <br />
@@ -34,7 +34,7 @@ module.exports = {
         subject: "(TEST ENVIRONMENT) Thank you for your communication",
         text: "Hello", // Replace with a valid field ID
         html: `
-                       Dear: ${name}
+                       Dear: ${from}
                        <br />
                        We have successfully received your message. Our team will respond with a confirmation shortly.
                        <br />
