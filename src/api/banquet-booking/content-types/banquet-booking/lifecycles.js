@@ -15,7 +15,6 @@ module.exports = {
       banquet_room,
       specialRequest,
     } = result;
-    console.log("From Lifecycle", result);
     try {
       strapi.plugins["email"].services.email.send({
         to: "frontoffice@malawisunhotel.com",

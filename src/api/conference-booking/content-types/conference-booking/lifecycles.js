@@ -1,7 +1,6 @@
 module.exports = {
   afterCreate(event) {
     const { result, params } = event;
-    console.log("From Lifecycle Conference: ", result);
 
     const {
       id,
