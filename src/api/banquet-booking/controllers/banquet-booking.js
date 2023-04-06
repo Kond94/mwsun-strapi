@@ -6,8 +6,6 @@
 
 const { createCoreController } = require("@strapi/strapi").factories;
 
-module.exports = createCoreController("api::banquet-booking.banquet-booking");
-
 module.exports = createCoreController(
   "api::banquet-booking.banquet-booking",
   ({ strapi }) => ({
