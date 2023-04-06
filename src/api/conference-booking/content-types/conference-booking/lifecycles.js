@@ -42,7 +42,7 @@ module.exports = {
                          # of Days: ${numberOfDays}
                          <br />
                          Room: ${
-                           conference_room?.name
+                           conference_room.name
                          } @ Mk${conference_room?.price.toLocaleString("en-US")}
                          <br />
                          Add Ons: ${conference_addons.map(
