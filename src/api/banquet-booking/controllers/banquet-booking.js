@@ -15,7 +15,10 @@ module.exports = createCoreController(
         .service("api::banquet-booking.banquet-booking")
         .find(sanitizedQueryParams);
       const sanitizedResults = await this.sanitizeOutput(results, ctx);
-      console.log("From Controller", sanitizedResults);
+
+      const response = await super.find(ctx);
+
+      console.log("From Controller", sanitizedResults, response);
       return this.transformResponse(sanitizedResults, { pagination });
     },
   })
