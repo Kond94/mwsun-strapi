@@ -11,7 +11,7 @@ module.exports = {
         cc: "marketingmwsun@gmail.com",
         bcc: "",
         replyTo: "",
-        subject: "(TEST ENVIRONMENT) New Mesage Alert",
+        subject: "New Mesage Alert",
         text: "Hello", // Replace with a valid field ID
         html: `
                        Name: ${from}
@@ -31,7 +31,7 @@ module.exports = {
         cc: "",
         bcc: "",
         replyTo: "",
-        subject: "(TEST ENVIRONMENT) Thank you for your communication",
+        subject: "Thank you for your communication",
         text: "Hello", // Replace with a valid field ID
         html: `
                        Dear: ${from}
