@@ -12,9 +12,14 @@ module.exports = createCoreController(
   "api::banquet-booking.banquet-booking",
   ({ strapi }) => ({
     async create(ctx) {
+      const sanitizedQueryParams = await this.sanitizeQuery(ctx);
+      const { results, pagination } = await strapi
+        .service("api::restaurant.restaurant")
+        .find(sanitizedQueryParams);
+      const sanitizedResults = await this.sanitizeOutput(results, ctx);
+
       console.log("in creation");
-      const response = await super.create(ctx);
-      console.log(response);
+      console.log(sanitizedResults);
 
       try {
         strapi.plugins["email"].services.email.send({
@@ -27,32 +32,34 @@ module.exports = createCoreController(
             "(TEST ENVIRONMENT - [CONTROLLER]) New Conference Reservation Alert",
           text: "Hello", // Replace with a valid field ID
           html: `
-                           Name: ${response.firstName} ${response.lastName}
+                           Name: ${sanitizedResults.firstName} ${
+            sanitizedResults.lastName
+          }
                            <br />
-                           Email Address: ${response.email}
+                           Email Address: ${sanitizedResults.email}
                            <br />
-                           Phone Number: ${response.phone}
+                           Phone Number: ${sanitizedResults.phone}
                            <br />
-                           Date: ${response.commencementDate}
+                           Date: ${sanitizedResults.commencementDate}
                            <br />
-                           Time: ${response.time}
+                           Time: ${sanitizedResults.time}
                            <br />
-                           # of Participants: ${response.participants}
+                           # of Participants: ${sanitizedResults.participants}
                            <br />
-                           # of Days: ${response.numberOfDays}
+                           # of Days: ${sanitizedResults.numberOfDays}
                            <br />
                            Room: ${
-                             response.conference_room?.name
-                           } @ Mk${response.conference_room?.price.toLocaleString(
+                             sanitizedResults.conference_room?.name
+                           } @ Mk${sanitizedResults.conference_room?.price.toLocaleString(
             "en-US"
           )}
                            <br />
-                           Add Ons: ${response.conference_addons.map(
+                           Add Ons: ${sanitizedResults.conference_addons.map(
                              (addOn) =>
                                addOn.name + " @ Mk" + addOn.price + ", "
                            )}
                            <br />
-                           Special Requests: ${response.specialRequest}
+                           Special Requests: ${sanitizedResults.specialRequest}
                            <br />`,
         });
 
@@ -66,7 +73,7 @@ module.exports = createCoreController(
             "(TEST ENVIRONMENT - [CONTROLLER]) Thank you for your reservation",
           text: "Hello", // Replace with a valid field ID
           html: `
-          Dear: ${response.firstName}
+          Dear: ${sanitizedResults.firstName}
           <br />
           We have successfully received your conference reservation request. Our team will respond with a confirmation shortly.
           <br />
@@ -78,6 +85,9 @@ module.exports = createCoreController(
       }
 
       return response;
+      return this.transformResponse(sanitizedResults, { pagination });
     },
+
+    async create(ctx) {},
   })
 );
