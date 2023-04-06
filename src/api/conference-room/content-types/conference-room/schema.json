@@ -40,6 +40,10 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "description": {
+      "type": "text",
+      "required": true
     }
   }
 }

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "banquet-room",
     "pluralName": "banquet-rooms",
-    "displayName": "Banquet-Room"
+    "displayName": "Banquet-Room",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -25,19 +26,23 @@
       "required": true
     },
     "displayPhoto": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
-    },
-    "photos": {
+      "required": true,
       "allowedTypes": [
         "images"
-      ],
+      ]
+    },
+    "photos": {
       "type": "media",
       "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "description": {
+      "type": "text",
       "required": true
     }
   }
