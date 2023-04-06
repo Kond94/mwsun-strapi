@@ -1,7 +1,7 @@
 module.exports = {
   afterCreate(event) {
     const { result, params } = event;
-    console.log(result);
+
     const {
       id,
       firstName,
@@ -15,7 +15,7 @@ module.exports = {
       banquet_room,
       specialRequest,
     } = result;
-
+    console.log("From Lifecycle", result);
     try {
       strapi.plugins["email"].services.email.send({
         to: "frontoffice@malawisunhotel.com",
@@ -39,7 +39,7 @@ module.exports = {
                            # of Participants: ${participants}
                            <br />
                            Room: ${
-                             banquet_room?.title
+                             banquet_room?.name
                            } @ Mk${banquet_room?.price.toLocaleString("en-US")}
                            <br />
                            Add Ons: ${banquet_addons?.map(

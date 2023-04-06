@@ -1,6 +1,7 @@
 module.exports = {
   afterCreate(event) {
     const { result, params } = event;
+    console.log("From Lifecycle Conference: ", result);
 
     const {
       id,
@@ -42,7 +43,7 @@ module.exports = {
                          # of Days: ${numberOfDays}
                          <br />
                          Room: ${
-                           conference_room?.title
+                           conference_room?.name
                          } @ Mk${conference_room?.price.toLocaleString("en-US")}
                          <br />
                          Add Ons: ${conference_addons.map(
