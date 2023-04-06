@@ -23,7 +23,7 @@ module.exports = {
         cc: "marketingmwsun@gmail.com",
         bcc: "",
         replyTo: "",
-        subject: "(TEST ENVIRONMENT) New Accomodation Reservation Alert",
+        subject: "(TEST ENVIRONMENT) New Accommodation Reservation Alert",
         text: "Hello", // Replace with a valid field ID
         html: `
                        Name: ${firstName} ${lastName}
@@ -61,7 +61,7 @@ module.exports = {
                        <br />
                        We have successfully received your accommodation reservation request. Our team will respond with a confirmation shortly.
                        <br />
-                       We take pride in our customer care. If you are not reponded to within 15 minuites please talk to one of our Managers to help us serve you better
+                       We take pride in our customer care. If you are not responded to within 15 minutes please talk to one of our Managers to help us serve you better
                       `,
       });
     } catch (err) {

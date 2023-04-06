@@ -1,7 +1,7 @@
 module.exports = {
   afterCreate(event) {
     const { result, params } = event;
-
+    console.log(result);
     const {
       id,
       firstName,
@@ -42,7 +42,7 @@ module.exports = {
                              banquet_room?.title
                            } @ Mk${banquet_room?.price.toLocaleString("en-US")}
                            <br />
-                           Add Ons: ${banquet_addons.map(
+                           Add Ons: ${banquet_addons?.map(
                              (addOn) =>
                                addOn.name + " @ Mk" + addOn.price + ", "
                            )}
@@ -62,9 +62,9 @@ module.exports = {
         html: `
                            Dear: ${firstName}
                            <br />
-                           We have successfully received your banquest reservation request. Our team will respond with a confirmation shortly.
+                           We have successfully received your banquet reservation request. Our team will respond with a confirmation shortly.
                            <br />
-                           We take pride in our customer care. If you are not reponded to within 15 minuites please talk to one of our Managers to help us serve you better
+                           We take pride in our customer care. If you are not responded to within 15 minutes please talk to one of our Managers to help us serve you better
                           `,
       });
     } catch (err) {
