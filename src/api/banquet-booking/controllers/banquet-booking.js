@@ -84,10 +84,7 @@ module.exports = createCoreController(
         console.log(err);
       }
 
-      return response;
       return this.transformResponse(sanitizedResults, { pagination });
     },
-
-    async create(ctx) {},
   })
 );
