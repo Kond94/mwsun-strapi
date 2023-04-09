@@ -25,6 +25,11 @@
     "price": {
       "type": "integer",
       "required": true
+    },
+    "perPerson": {
+      "type": "boolean",
+      "default": true,
+      "required": true
     }
   }
 }
