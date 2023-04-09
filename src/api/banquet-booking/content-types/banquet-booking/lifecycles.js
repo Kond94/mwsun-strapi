@@ -44,7 +44,7 @@ module.exports = {
                            <br />
                            Add Ons: ${banquet_addons?.map(
                              (addOn) =>
-                               addOn.name + " @ Mk" + addOn.price + ", "
+                               addOn.name + addon.perPerson ? " @ Mk" + addOn.price * participants : " @ Mk" + addOn.price + ", "
                            )}
                            <br />
                            Special Requests: ${specialRequest}

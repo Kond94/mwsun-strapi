@@ -46,8 +46,9 @@ module.exports = {
                          } @ Mk${conference_room?.price.toLocaleString("en-US")}
                          <br />
                          Add Ons: ${conference_addons.map(
-                           (addOn) => addOn.name + " @ Mk" + addOn.price + ", "
-                         )}
+                          (addOn) =>
+                               addOn.name + addon.perPerson ? " @ Mk" + addOn.price * participants : " @ Mk" + addOn.price + ", "
+                           )}
                          <br />
                          Special Requests: ${specialRequest}
                          <br />`,
