@@ -24,11 +24,6 @@
     "icon": {
       "type": "string",
       "required": true
-    },
-    "perPerson": {
-      "type": "boolean",
-      "required": true,
-      "default": true
     }
   }
 }
