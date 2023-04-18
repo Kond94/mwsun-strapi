@@ -4,7 +4,8 @@
   "info": {
     "singularName": "package-booking",
     "pluralName": "package-bookings",
-    "displayName": "Package-Booking"
+    "displayName": "Package-Booking",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -13,10 +14,6 @@
   "attributes": {
     "firstName": {
       "type": "string",
-      "required": true
-    },
-    "lastName": {
-      "type": "email",
       "required": true
     },
     "phone": {
@@ -38,6 +35,14 @@
     },
     "specialRequest": {
       "type": "text",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "lastName": {
+      "type": "string",
       "required": true
     }
   }
