@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "package_bookings",
+  "info": {
+    "singularName": "package-booking",
+    "pluralName": "package-bookings",
+    "displayName": "Package-Booking"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "firstName": {
+      "type": "string",
+      "required": true
+    },
+    "lastName": {
+      "type": "email",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "package": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::package.package"
+    },
+    "participants": {
+      "type": "integer",
+      "required": true
+    },
+    "specialRequest": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
