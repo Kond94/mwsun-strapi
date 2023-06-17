@@ -1,8 +1,8 @@
 {
-  "name": "strapi-postgres-cloudinary",
+  "name": "malawi-sun-hotel",
   "private": true,
   "version": "0.1.0",
-  "description": "A Strapi application",
+  "description": "A Strapi application for Malawi Sun Hotel",
   "scripts": {
     "develop": "strapi develop",
     "start": "strapi start",
@@ -19,10 +19,12 @@
     "pg": "^8.7.0",
     "pg-connection-string": "^2.5.0",
     "sqlite3": "latest",
-    "strapi-plugin-populate-deep": "^2.0.0"
+    "strapi-plugin-populate-deep": "^2.0.0",
+    "strapi-plugin-transformer": "^3.1.0",
+    "fs-extra": "^10.0.0"
   },
   "author": {
-    "name": "A Strapi developer"
+    "name": "Kondwerani Kamsesa"
   },
   "strapi": {
     "uuid": "5dbc738b-6a52-4a78-a46c-eed70aa61c15"

@@ -1,7 +1,6 @@
 module.exports = {
   afterCreate(event) {
     const { result, params } = event;
-    console.log(params, result);
     const {
       id,
       firstName,
@@ -42,9 +41,10 @@ module.exports = {
                              banquet_room.name
                            } @ Mk${banquet_room?.price.toLocaleString("en-US")}
                            <br />
-                           Add Ons: ${banquet_addons?.map(
-                             (addOn) =>
-                               addOn.name + addon.perPerson ? " @ Mk" + addOn.price * participants : " @ Mk" + addOn.price + ", "
+                           Add Ons: ${banquet_addons?.map((addOn) =>
+                             addOn.name + addon.perPerson
+                               ? " @ Mk" + addOn.price * participants
+                               : " @ Mk" + addOn.price + ", "
                            )}
                            <br />
                            Special Requests: ${specialRequest}
