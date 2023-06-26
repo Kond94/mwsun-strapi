@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "take_away_orders",
+  "info": {
+    "singularName": "take-away-order",
+    "pluralName": "take-away-orders",
+    "displayName": "Take Away Order",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Type": {
+      "type": "enumeration",
+      "enum": [
+        "Room Service",
+        "Take Away",
+        "Staff Order"
+      ],
+      "default": "Room Service",
+      "required": true
+    },
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "takeaway_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::takeaway-item.takeaway-item",
+      "mappedBy": "take_away_order"
+    }
+  }
+}

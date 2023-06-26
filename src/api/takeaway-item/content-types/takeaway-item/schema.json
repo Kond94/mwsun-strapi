@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "takeaway_items",
+  "info": {
+    "singularName": "takeaway-item",
+    "pluralName": "takeaway-items",
+    "displayName": "Takeaway Item"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "quantity": {
+      "type": "integer",
+      "required": true,
+      "default": 1
+    },
+    "meal": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::meal.meal"
+    },
+    "take_away_order": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::take-away-order.take-away-order",
+      "inversedBy": "takeaway_items"
+    }
+  }
+}
