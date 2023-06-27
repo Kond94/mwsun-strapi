@@ -1,35 +1,38 @@
 {
-  "name": "malawi-sun-hotel",
+  "name": "mwsun-strapi",
   "private": true,
   "version": "0.1.0",
-  "description": "A Strapi application for Malawi Sun Hotel",
+  "description": "A Strapi application",
   "scripts": {
     "develop": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
     "strapi": "strapi"
   },
+  "devDependencies": {},
   "dependencies": {
-    "@strapi/plugin-i18n": "4.1.7",
-    "@strapi/plugin-users-permissions": "4.1.7",
+    "@strapi/strapi": "4.11.2",
+    "@strapi/plugin-users-permissions": "4.11.2",
+    "@strapi/plugin-i18n": "4.11.2",
+    "pg": "8.8.0",
     "@strapi/provider-email-sendgrid": "^4.6.0",
-    "@strapi/provider-upload-cloudinary": "4.1.7",
-    "@strapi/strapi": "4.1.7",
+    "@strapi/provider-upload-cloudinary": "^4.11.1",
+    "better-sqlite3": "8.0.1",
     "fs-extra": "^10.0.0",
-    "pg": "^8.7.0",
+    "lodash.set": "^4.3.2",
+    "mime-types": "^2.1.27",
     "pg-connection-string": "^2.5.0",
-    "sqlite3": "latest",
     "strapi-plugin-populate-deep": "^2.0.0",
     "strapi-plugin-transformer": "^3.1.0"
   },
   "author": {
-    "name": "Kondwerani Kamsesa"
+    "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "5dbc738b-6a52-4a78-a46c-eed70aa61c15"
+    "uuid": "c3076c4a-7cf7-4b85-929d-9ea2506eb8a4"
   },
   "engines": {
-    "node": ">=10.0.0",
+    "node": ">=14.19.1 <=18.x.x",
     "npm": ">=6.0.0"
   },
   "license": "MIT"
