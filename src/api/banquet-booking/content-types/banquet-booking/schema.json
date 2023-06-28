@@ -12,14 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "firstName": {
-      "type": "string",
-      "required": true
-    },
-    "lastName": {
-      "type": "string",
-      "required": true
-    },
     "email": {
       "type": "email",
       "required": true
@@ -56,6 +48,9 @@
     "specialRequest": {
       "type": "text",
       "required": true
+    },
+    "name": {
+      "type": "string"
     }
   }
 }
