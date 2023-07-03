@@ -36,10 +36,11 @@
     "category": {
       "type": "enumeration",
       "enum": [
-        "Starters & Salads",
-        "Lunch & Dinner",
+        "Starters",
+        "Mains",
+        "Sides",
+        "Salads",
         "Deserts",
-        "Snacks",
         "Drinks"
       ],
       "required": true
