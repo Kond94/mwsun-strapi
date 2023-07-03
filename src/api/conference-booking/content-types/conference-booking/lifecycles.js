@@ -4,8 +4,7 @@ module.exports = {
 
     const {
       id,
-      firstName,
-      lastName,
+      name,
       email,
       phone,
       commencementDate,
@@ -27,7 +26,7 @@ module.exports = {
         subject: "New Conference Reservation Alert",
         text: "Hello", // Replace with a valid field ID
         html: `
-                         Name: ${firstName} ${lastName}
+                         Name: ${name}
                          <br />
                          Email Address: ${email}
                          <br />
@@ -45,10 +44,11 @@ module.exports = {
                            conference_room.name
                          } @ Mk${conference_room?.price.toLocaleString("en-US")}
                          <br />
-                         Add Ons: ${conference_addons.map(
-                          (addOn) =>
-                               addOn.name + addon.perPerson ? " @ Mk" + addOn.price * participants : " @ Mk" + addOn.price + ", "
-                           )}
+                         Add Ons: ${conference_addons.map((addOn) =>
+                           addOn.name + addOn.perPerson
+                             ? " @ Mk" + addOn.price * participants
+                             : " @ Mk" + addOn.price + ", "
+                         )}
                          <br />
                          Special Requests: ${specialRequest}
                          <br />`,
@@ -63,11 +63,9 @@ module.exports = {
         subject: "Thank you for your reservation",
         text: "Hello", // Replace with a valid field ID
         html: `
-        Dear: ${firstName}
+        Dear: ${name}
         <br />
         We have successfully received your conference reservation request. Our team will respond with a confirmation shortly.
-        <br />
-        We take pride in our customer care. If you are not responded to within 15 minutes please talk to one of our Managers to help us serve you better
                         `,
       });
     } catch (err) {

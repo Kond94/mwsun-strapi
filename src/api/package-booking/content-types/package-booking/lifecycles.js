@@ -3,8 +3,7 @@ module.exports = {
     const { result, params } = event;
     const {
       id,
-      firstName,
-      lastName,
+      name,
       email,
       phone,
       date,
@@ -23,7 +22,7 @@ module.exports = {
         subject: "New Package Reservation Alert",
         text: "Hello", // Replace with a valid field ID
         html: `
-                           Name: ${firstName} ${lastName}
+                           Name: ${name}
                            <br />
                            Email Address: ${email}
                            <br />
@@ -50,12 +49,10 @@ module.exports = {
         subject: "Thank you for your reservation",
         text: "Hello", // Replace with a valid field ID
         html: `
-                           Dear: ${firstName}
+                           Dear: ${name}
                            <br />
                            We have successfully received your banquet reservation request. Our team will respond with a confirmation shortly.
-                           <br />
-                           We take pride in our customer care. If you are not responded to within 15 minutes please talk to one of our Managers to help us serve you better
-                          `,
+                         `,
       });
     } catch (err) {
       console.log(err);
