@@ -20,7 +20,7 @@ module.exports = {
       strapi.plugins["email"].services.email.send({
         to: "frontoffice@malawisunhotel.com",
         from: "frontoffice@malawisunhotel.com", // e.g. single sender verification in SendGrid
-        cc: "marketingmwsun@gmail.com",
+
         bcc: "",
         replyTo: "",
         subject: "New Conference Reservation Alert",
