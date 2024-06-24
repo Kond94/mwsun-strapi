@@ -8,16 +8,17 @@ module.exports = {
       phone,
       date,
       participants,
-      package,
+      packageName,
+      packagePrice,
+      totalPrice,
       specialRequest,
     } = result;
-
     try {
       strapi.plugins["email"].services.email.send({
         to: "frontoffice@malawisunhotel.com",
         from: "frontoffice@malawisunhotel.com", // e.g. single sender verification in SendGrid
 
-        bcc: "",
+        bcc: "kamsesakond@hotmail.com",
         replyTo: "",
         subject: "New Package Reservation Alert",
         text: "Hello", // Replace with a valid field ID
@@ -32,10 +33,10 @@ module.exports = {
                            <br />
                            # of Participants: ${participants}
                            <br />
-                           Package: ${
-                             package.name
-                           } @ Mk${package?.price.toLocaleString("en-US")}
+                           Package: ${packageName} @ $${packagePrice} pp
                            <br />
+                           Total Price: $${totalPrice}
+                          <br />
                            Special Requests: ${specialRequest}
                            <br />`,
       });
@@ -44,14 +45,33 @@ module.exports = {
         to: email,
         from: "frontoffice@malawisunhotel.com", // e.g. single sender verification in SendGrid
         cc: "",
-        bcc: "",
+        bcc: "kamsesakond@hotmail.com",
         replyTo: "",
         subject: "Thank you for your reservation",
         text: "Hello", // Replace with a valid field ID
         html: `
                            Dear: ${name}
                            <br />
-                           We have successfully received your banquet reservation request. Our team will respond with a confirmation shortly.
+                           We have successfully received your Package booking reservation request. Our team will respond with a confirmation shortly.
+
+                           The booking Details:
+
+                           Name: ${name}
+                           <br />
+                           Email Address: ${email}
+                           <br />
+                           Phone Number: ${phone}
+                           <br />
+                           Date: ${date}
+                           <br />
+                           # of Participants: ${participants}
+                           <br />
+                           Package: ${packageName} @ $${packagePrice} pp
+                           <br />
+                           Total Price: $${totalPrice}
+                          <br />
+                           Special Requests: ${specialRequest}
+                           <br />
                          `,
       });
     } catch (err) {

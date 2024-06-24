@@ -2,18 +2,7 @@ module.exports = {
   afterCreate(event) {
     const { result, params } = event;
 
-    const {
-      id,
-      name,
-      email,
-      phone,
-      arrivalDate,
-      departureDate,
-      room,
-      adults,
-      children,
-      specialRequest,
-    } = result;
+    const { name, phone, email, amount, bookingType, currency, date } = result;
     try {
       strapi.plugins["email"].services.email.send({
         to: "frontoffice@malawisunhotel.com",
@@ -21,7 +10,7 @@ module.exports = {
 
         bcc: "kamsesakond@hotmail.com",
         replyTo: "",
-        subject: "New Accommodation Reservation Alert",
+        subject: "New Successful Payment Alert",
         text: "Hello", // Replace with a valid field ID
         html: `
                        Name: ${name}
@@ -30,19 +19,14 @@ module.exports = {
                        <br />
                        Phone Number: ${phone}
                        <br />
-                       Arrival: ${arrivalDate}
+                       Amount: ${amount}
                        <br />
-                       Departure: ${departureDate}
+                       Currency: ${currency}
                        <br />
-                       Room: ${room?.title} @ Mk${room?.price.toLocaleString(
-          "en-US"
-        )}
+                       Booking: ${bookingType}
                        <br />
-                       Adults: ${adults}
-                       <br />
-                       Children: ${children}
-                       <br />
-                       Special Requests: ${specialRequest}
+                       Date: ${date}
+                      
                        <br />`,
       });
 
@@ -52,14 +36,14 @@ module.exports = {
         cc: "",
         bcc: "kamsesakond@hotmail.com",
         replyTo: "",
-        subject: "Thank you for your reservation",
+        subject: "Your payment has been received",
         text: "Hello", // Replace with a valid field ID
         html: `
                 Dear: ${name}
                 <br />
-                We have successfully received your accommodation reservation request. Our team will respond with a confirmation shortly.
+                We have successfully received your payment for your booking. Our team will respond shortly.
                 
-                The booking Details:
+                The Payment Details:
 
                 Name: ${name}
                 <br />
@@ -67,19 +51,13 @@ module.exports = {
                 <br />
                 Phone Number: ${phone}
                 <br />
-                Arrival: ${arrivalDate}
+                Amount: ${amount}
                 <br />
-                Departure: ${departureDate}
+                Currency: ${currency}
                 <br />
-                Room: ${room?.title} @ Mk${room?.price.toLocaleString("en-US")}
-                                   <br />
-                                   Adults: ${adults}
-                                   <br />
-                                   Children: ${children}
-                                   <br />
-                                 
-                Special Requests: ${specialRequest}
-                <br />     
+                Booking: ${bookingType}
+                <br />
+                Date: ${date}
                 
                 `,
       });
