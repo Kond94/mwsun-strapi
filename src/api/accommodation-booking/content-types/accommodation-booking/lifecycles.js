@@ -14,7 +14,8 @@ module.exports = {
       children,
       specialRequest,
     } = result;
-    const { roomName, roomPrice, totalPrice } = params;
+    const { roomName, roomPrice, totalPrice } = params.data;
+    console.log(params);
     try {
       strapi.plugins["email"].services.email.send({
         to: "frontoffice@malawisunhotel.com",
@@ -37,6 +38,8 @@ module.exports = {
                        <br />
                        Room: ${roomName} @ Mk${roomPrice}
                        <br />
+                       Total quoted Price: $${totalPrice}
+                       <br />
                        Adults: ${adults}
                        <br />
                        Children: ${children}
@@ -56,9 +59,14 @@ module.exports = {
         html: `
                 Dear: ${name}
                 <br />
+                <br />
                 We have successfully received your accommodation reservation request. Our team will respond with a confirmation shortly.
+                <br />
+                <br />
                 
                 The booking Details:
+                <br />
+                <br />
 
                 Name: ${name}
                 <br />

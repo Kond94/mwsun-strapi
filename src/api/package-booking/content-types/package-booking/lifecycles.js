@@ -11,7 +11,7 @@ module.exports = {
 
       specialRequest,
     } = result;
-    const { packageName, packagePrice, totalPrice } = params;
+    const { packageName, packagePrice, totalPrice } = params.data;
     try {
       strapi.plugins["email"].services.email.send({
         to: "frontoffice@malawisunhotel.com",
@@ -34,7 +34,7 @@ module.exports = {
                            <br />
                            Package: ${packageName} @ $${packagePrice} pp
                            <br />
-                           Total Price: $${totalPrice}
+                           Total quoted Price: $${totalPrice}
                           <br />
                            Special Requests: ${specialRequest}
                            <br />`,
@@ -51,10 +51,13 @@ module.exports = {
         html: `
                            Dear: ${name}
                            <br />
+                <br />
                            We have successfully received your Package booking reservation request. Our team will respond with a confirmation shortly.
+                           <br />
                            <br />
 
                            The booking Details:
+                           <br />
                            <br />
 
                            Name: ${name}
