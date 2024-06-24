@@ -8,17 +8,16 @@ module.exports = {
       phone,
       date,
       participants,
-      packageName,
-      packagePrice,
-      totalPrice,
+
       specialRequest,
     } = result;
+    const { packageName, packagePrice, totalPrice } = params;
     try {
       strapi.plugins["email"].services.email.send({
         to: "frontoffice@malawisunhotel.com",
         from: "frontoffice@malawisunhotel.com", // e.g. single sender verification in SendGrid
 
-        bcc: "kamsesakond@hotmail.com",
+        bcc: "kamsesakond@gmail.com",
         replyTo: "",
         subject: "New Package Reservation Alert",
         text: "Hello", // Replace with a valid field ID
@@ -45,7 +44,7 @@ module.exports = {
         to: email,
         from: "frontoffice@malawisunhotel.com", // e.g. single sender verification in SendGrid
         cc: "",
-        bcc: "kamsesakond@hotmail.com",
+        bcc: "kamsesakond@gmail.com",
         replyTo: "",
         subject: "Thank you for your reservation",
         text: "Hello", // Replace with a valid field ID
@@ -53,8 +52,10 @@ module.exports = {
                            Dear: ${name}
                            <br />
                            We have successfully received your Package booking reservation request. Our team will respond with a confirmation shortly.
+                           <br />
 
                            The booking Details:
+                           <br />
 
                            Name: ${name}
                            <br />

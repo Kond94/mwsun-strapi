@@ -21,7 +21,7 @@ module.exports = {
         to: "frontoffice@malawisunhotel.com",
         from: "frontoffice@malawisunhotel.com", // e.g. single sender verification in SendGrid
 
-        bcc: "kamsesakond@hotmail.com",
+        bcc: "kamsesakond@gmail.com",
         replyTo: "",
         subject: "New Conference Reservation Alert",
         text: "Hello", // Replace with a valid field ID
@@ -58,7 +58,7 @@ module.exports = {
         to: email,
         from: "frontoffice@malawisunhotel.com", // e.g. single sender verification in SendGrid
         cc: "",
-        bcc: "kamsesakond@hotmail.com",
+        bcc: "kamsesakond@gmail.com",
         replyTo: "",
         subject: "Thank you for your reservation",
         text: "Hello", // Replace with a valid field ID
