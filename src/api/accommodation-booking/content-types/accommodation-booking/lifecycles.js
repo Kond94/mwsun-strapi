@@ -38,7 +38,7 @@ module.exports = {
                        <br />
                        Room: ${roomName} @ Mk${roomPrice}
                        <br />
-                       Total quoted Price: $${totalPrice}
+                       Total quoted Price: Mk${totalPrice}
                        <br />
                        Adults: ${adults}
                        <br />
@@ -80,7 +80,7 @@ module.exports = {
                 <br />
                 Room: ${roomName} @ Mk${roomPrice}
                 <br />
-                Total Price: ${totalPrice}
+                Total Price: Mk${totalPrice}
                                    <br />
                                    Adults: ${adults}
                                    <br />
